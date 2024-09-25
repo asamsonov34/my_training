@@ -18,10 +18,8 @@ incr = input("На сколько ещё изменить возраст? Вве
 while True:
         try:
             age = float(age) + float(incr)
-            if float(age) - float(int(age)) == 0:
+            if float(age) - int(age) == 0:
                 age = int(age)
-            else:
-                age = float(age)
             break
         except ValueError:
             incr = input("Нет, введите ЦЕЛОЕ ЧИСЛО или ДРОБЬ С ДЕСЯТИЧНОЙ ТОЧКОЙ: ")
