@@ -19,5 +19,5 @@ print(avg)
 # Let us try to use the dictionary to make sure it is actually a dictionary,
 # and not something that just looks like one in the console output. We will
 # attempt to get the values by the keys with the get() method:
-for i in range(len(students)):
-    print(stu_list[i], avg.get(stu_list[i]))
+for i in range(len(avg)):
+    print(list(avg.keys())[i], avg.get(list(avg.keys())[i]))
