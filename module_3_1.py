@@ -7,9 +7,9 @@ def count_calls():
 
 def string_info(my_str):
     count_calls()
-    return(len(my_str), my_str.upper(), my_str.lower())
+    return (len(my_str), my_str.upper(), my_str.lower())
 
-def in_list(my_str, my_list):
+def in_list (my_str, my_list):
     count_calls()
     is_memeber = False
     for i in range(len(my_list)):
