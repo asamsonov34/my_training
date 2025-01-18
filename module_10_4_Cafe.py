@@ -1,5 +1,4 @@
 import sys
-from colorsys import yiq_to_rgb
 from threading import Thread
 from queue import Queue
 from random import randint
@@ -13,10 +12,9 @@ class Table():
 # =====================================================================
 class Guest(Thread):
 
-    def __init__(self, name, done):
+    def __init__(self, name):
         Thread.__init__(self)
         self.name = name
-        self.done = done
 
     def run(self):
         sleep(randint(3, 10)) # Random dining time 3...9 seconds
@@ -57,7 +55,7 @@ class Cafe():
                               f'and left Table {self.tables[i].number}.') # См. комментарий в конце.
                         if not self.q.empty():
                             self.tables[i].guest = self.q.get()
-                            print(f'Now {self.tables[i].guest.name} has taken Table {self.tables[i].number}')
+                            print(f'Now {self.tables[i].guest.name} has taken Table {self.tables[i].number}.')
                             self.tables[i].guest.start()
                         else:
                             self.tables[i].guest = None
@@ -71,7 +69,7 @@ class Cafe():
 cafe = Cafe()
 guest_names = ['Alice', 'Elsie', 'Esme', 'Isabelle', 'Megan', 'Olivia',
                'Albert', 'Arthur', 'Daniel', 'George', 'James', 'Oliver']
-guests = [Guest(name, done = False) for name in guest_names]
+guests = [Guest(name) for name in guest_names]
 print('========================================\nWelcome to Tom\'s Dinder!\n\n(Tut, tut, too-dut,\n'
       'Tut, tu-doo, dut...\n\nRemeber Suzanne Vega\'s song\nof the early eighties?)\n'
       '========================================')
