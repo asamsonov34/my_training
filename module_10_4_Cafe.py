@@ -52,7 +52,7 @@ class Cafe():
                 if not self.tables[i].guest == None:
                     if not self.tables[i].guest.is_alive():
                         print(f'{self.tables[i].guest.name} has finished dining'
-                              f'and left Table {self.tables[i].number}.') # См. комментарий в конце.
+                              f' and left Table {self.tables[i].number}.') # См. комментарий в конце.
                         if not self.q.empty():
                             self.tables[i].guest = self.q.get()
                             print(f'Now {self.tables[i].guest.name} has taken Table {self.tables[i].number}.')
@@ -70,7 +70,7 @@ cafe = Cafe()
 guest_names = ['Alice', 'Elsie', 'Esme', 'Isabelle', 'Megan', 'Olivia',
                'Albert', 'Arthur', 'Daniel', 'George', 'James', 'Oliver']
 guests = [Guest(name) for name in guest_names]
-print('========================================\nWelcome to Tom\'s Dinder!\n\n(Tut, tut, too-dut,\n'
+print('========================================\nWelcome to Tom\'s Diner!\n\n(Tut, tut, too-dut,\n'
       'Tut, tu-doo, dut...\n\nRemeber Suzanne Vega\'s song\nof the early eighties?)\n'
       '========================================')
 sleep(3)
